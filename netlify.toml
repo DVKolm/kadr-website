@@ -1,0 +1,10 @@
+[build]
+  # Нет команды сборки - это статический HTML сайт
+  command = ""
+  # Публикуем корневую директорию
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
