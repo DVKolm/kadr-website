@@ -456,6 +456,191 @@
             scroll-behavior: smooth;
         }
 
+        /* Theme toggle button */
+        .theme-toggle {
+            padding: 8px;
+            background-color: #E5E5E0;
+            color: #000000;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        .theme-toggle:hover {
+            background-color: #D5D5D0;
+            transform: scale(1.05);
+        }
+
+        .theme-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .theme-icon path {
+            fill: currentColor;
+        }
+
+        .theme-icon line {
+            fill: none;
+        }
+
+        /* Dark theme styles */
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #e5e5e5;
+        }
+
+        body.dark-theme header {
+            background-color: #2a2a2a;
+        }
+
+        body.dark-theme .logo {
+            color: #e5e5e5;
+        }
+
+        body.dark-theme nav a {
+            color: #d4d4d4;
+        }
+
+        body.dark-theme nav a:hover {
+            color: #ffffff;
+        }
+
+        body.dark-theme .contact-button {
+            background-color: #5a5a52;
+            color: #ffffff;
+            border: 2px solid #6a6a62;
+        }
+
+        body.dark-theme .contact-button:hover {
+            background-color: #6a6a62;
+            color: #ffffff;
+        }
+
+        body.dark-theme .theme-toggle {
+            background-color: #3a3a3a;
+            color: #ffffff;
+        }
+
+        body.dark-theme .theme-toggle:hover {
+            background-color: #4a4a4a;
+        }
+
+        body.dark-theme section {
+            background-color: #2a2a2a;
+            border: 1px solid #3a3a3a;
+        }
+
+        body.dark-theme h1,
+        body.dark-theme h2 {
+            color: #e5e5e5;
+        }
+
+        body.dark-theme .subtitle {
+            color: #c4c4c4;
+        }
+
+        body.dark-theme p {
+            color: #b4b4b4;
+        }
+
+        body.dark-theme .advantage-card,
+        body.dark-theme .candidate-card,
+        body.dark-theme .review-card,
+        body.dark-theme .faq-card,
+        body.dark-theme .service-card {
+            background-color: #1a1a1a;
+            border-color: #3a3a3a;
+        }
+
+        body.dark-theme .advantage-title,
+        body.dark-theme .candidate-title,
+        body.dark-theme .faq-question,
+        body.dark-theme .service-title {
+            color: #e5e5e5;
+        }
+
+        body.dark-theme .advantage-text,
+        body.dark-theme .candidate-text,
+        body.dark-theme .faq-answer,
+        body.dark-theme .service-text {
+            color: #b4b4b4;
+        }
+
+        body.dark-theme .stat-item {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-color: #3a3a3a;
+        }
+
+        body.dark-theme .stat-number {
+            color: #e5e5e5;
+        }
+
+        body.dark-theme .stat-label {
+            color: #b4b4b4;
+        }
+
+        body.dark-theme .highlight-box {
+            background: linear-gradient(135deg, #5a5a52 0%, #4a4a42 100%);
+        }
+
+        body.dark-theme .highlight-box p {
+            color: #ffffff;
+        }
+
+        body.dark-theme .cta-button {
+            background-color: #5a5a52;
+            color: #ffffff;
+            border: 2px solid #6a6a62;
+        }
+
+        body.dark-theme .cta-button:hover {
+            background-color: #6a6a62;
+            color: #ffffff;
+        }
+
+        body.dark-theme .contact-title {
+            color: #e5e5e5;
+        }
+
+        body.dark-theme .contact-info {
+            color: #b4b4b4;
+        }
+
+        body.dark-theme .bottom-text {
+            color: #b4b4b4;
+        }
+
+        body.dark-theme .review-author {
+            color: #e5e5e5;
+        }
+
+        body.dark-theme ul {
+            color: #b4b4b4;
+        }
+
+        body.dark-theme footer {
+            background-color: #2a2a2a;
+            border-top-color: #3a3a3a;
+        }
+
+        body.dark-theme footer p {
+            color: #b4b4b4;
+        }
+
         /* Адаптивность для планшетов */
         @media (max-width: 1024px) {
             section {
@@ -546,6 +731,11 @@
             .contact-button {
                 padding: 6px 15px;
                 font-size: 14px;
+            }
+
+            .theme-toggle {
+                width: 36px;
+                height: 36px;
             }
 
             main {
@@ -662,6 +852,11 @@
                 font-size: 13px;
             }
 
+            .theme-toggle {
+                width: 32px;
+                height: 32px;
+            }
+
             h1 {
                 font-size: 24px;
             }
@@ -725,6 +920,22 @@
                 <a href="#advantages">Преимущества</a>
                 <a href="#candidates">Кандидаты</a>
                 <a href="#faq">FAQ</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg class="theme-icon" id="moonIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                    <svg class="theme-icon" id="sunIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
                 <a href="#contact" class="contact-button">Контакты</a>
             </nav>
         </div>
@@ -735,7 +946,7 @@
         <!-- Hero Section -->
         <section>
             <h1>Подбор персонала из Бангладеш для российских предприятий</h1>
-            <h2 class="subtitle">Закроем кадровый вопрос за 2 месяца с гарантией результата</h2>
+            <h2 class="subtitle">Закроем кадровый вопрос — качественный подбор персонала под ваши требования</h2>
 
             <div class="stats-grid">
                 <div class="stat-item">
@@ -743,8 +954,8 @@
                     <div class="stat-label">месяца на подбор</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">месяца гарантии</div>
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">кандидатов в базе</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">10+</div>
@@ -774,16 +985,9 @@
                 </div>
 
                 <div class="advantage-card">
-                    <h3 class="advantage-title">Гарантия 3 месяца</h3>
+                    <h3 class="advantage-title">Быстрый подбор</h3>
                     <p class="advantage-text">
-                        Бесплатная замена, если специалист не подошёл. Ваши риски минимальны.
-                    </p>
-                </div>
-
-                <div class="advantage-card">
-                    <h3 class="advantage-title">Срок — 2 месяца</h3>
-                    <p class="advantage-text">
-                        От заявки до выхода на работу. Чёткий график, понятные этапы.
+                        Эффективная система отбора кандидатов из большой базы проверенных специалистов.
                     </p>
                 </div>
 
@@ -795,9 +999,9 @@
                 </div>
 
                 <div class="advantage-card">
-                    <h3 class="advantage-title">Бригадир-переводчик</h3>
+                    <h3 class="advantage-title">Переводчик в команде</h3>
                     <p class="advantage-text">
-                        Говорит по-русски, решает бытовые вопросы, помогает адаптироваться.
+                        В каждой команде обязательно есть человек, который хорошо знает русский язык и помогает с переводом и адаптацией.
                     </p>
                 </div>
 
@@ -863,7 +1067,7 @@
                 <div class="service-card">
                     <h3 class="service-title">Адаптация</h3>
                     <p class="service-text">
-                        Бригадир-переводчик помогает решать все вопросы — от бытовых до производственных.
+                        Русскоговорящий член команды помогает решать все вопросы — от бытовых до производственных. Мы всегда на связи для поддержки.
                     </p>
                 </div>
             </div>
@@ -990,7 +1194,7 @@
                 <div class="faq-card">
                     <h3 class="faq-question">Сколько времени занимает подбор?</h3>
                     <p class="faq-answer">
-                        Не более 2 месяцев: согласование (3-5 дней), отбор (2-3 недели), документы (3-4 недели), прибытие (1 неделя).
+                        Процесс включает согласование требований, отбор кандидатов, оформление документов и организацию прибытия. Сроки обсуждаются индивидуально.
                     </p>
                 </div>
 
@@ -1009,16 +1213,9 @@
                 </div>
 
                 <div class="faq-card">
-                    <h3 class="faq-question">Что если сотрудник не подойдёт?</h3>
-                    <p class="faq-answer">
-                        Гарантия 3 месяца — бесплатная замена за 2-3 недели по любой причине.
-                    </p>
-                </div>
-
-                <div class="faq-card">
                     <h3 class="faq-question">Как решается языковой вопрос?</h3>
                     <p class="faq-answer">
-                        Бригадир со знанием русского языка обеспечивает коммуникацию и помогает с инструктажами.
+                        В каждой команде обязательно есть человек, который отлично знает русский язык. Он помогает с коммуникацией, переводом инструктажей и адаптацией.
                     </p>
                 </div>
 
@@ -1032,14 +1229,7 @@
                 <div class="faq-card">
                     <h3 class="faq-question">Есть ли поддержка после?</h3>
                     <p class="faq-answer">
-                        Да. Бригадиры на связи весь период работы. Не исчезаем после трудоустройства.
-                    </p>
-                </div>
-
-                <div class="faq-card">
-                    <h3 class="faq-question">Как проходит замена?</h3>
-                    <p class="faq-answer">
-                        Сообщаете о проблеме — подбираем замену из резерва за 2-3 недели. В период гарантии бесплатно.
+                        Да. Мы всегда на связи весь период работы сотрудников. Не исчезаем после трудоустройства и помогаем решать возникающие вопросы.
                     </p>
                 </div>
             </div>
@@ -1078,5 +1268,36 @@
     <footer>
         <p>© 2025 Агентство «КАДР». Подбор персонала из Бангладеш для российских предприятий.</p>
     </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const moonIcon = document.getElementById('moonIcon');
+        const sunIcon = document.getElementById('sunIcon');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+
+            if (body.classList.contains('dark-theme')) {
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 </html>
